@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+
+      * {
+        font-family: "Roboto", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 48;
+        color: rgb(229, 238, 246);
+      }
+
+      body {
+        margin: 0;
+        background-color: rgb(45, 44, 48);
+      }
+
+      button:hover {
+        cursor: pointer;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 25px;
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        gap: 25px;
+      }
+
+      a,
+      .setting {
+        color: rgb(229, 238, 246);
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      a:hover,
+      .links:hover,
+      .dropup ul li button:hover {
+        color: white;
+        text-decoration: underline wavy;
+      }
+
+      .pfp-container {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .pfp-container img {
+        width: 30px;
+      }
+
+      .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .main img {
+        height: 150px;
+        padding: 40px 0;
+      }
+
+      .searchbar-container {
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+
+      .left-icon {
+        /* border:  rgb(137, 142, 147) solid; */
+        height: 42px;
+        display: flex;
+        align-items: center;
+        /* border-width: 1px 0px 1px 1px; */
+        padding-left: 15px;
+        /* border-radius: 40px 0px 0px 40px; */
+        position: absolute;
+      }
+
+      .right-icon {
+        /* border:  rgb(137, 142, 147) solid; */
+        height: 42px;
+        display: flex;
+        align-items: center;
+        /* border-width: 1px 1px 1px 0px; */
+        padding-right: 15px;
+        /* border-radius: 0px 40px 40px 0px; */
+        gap: 10px;
+        position: absolute;
+        right: 0;
+      }
+
+      .searchbar {
+        height: 40px;
+        width: 500px;
+        border: rgb(137, 142, 147) solid;
+        border-width: 1px;
+        border-radius: 40px;
+        text-indent: 15px;
+        font-size: 16px;
+        background-color: rgb(45, 44, 48);
+        color: aliceblue;
+        padding-left: 40px;
+        padding-right: 90px;
+      }
+
+      .searchbar:focus,
+      .searchbar:hover{
+        border: none;
+        outline: none;
+        background-color: rgb(71, 68, 78);
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.274);
+        border-radius: 40px;
+      }
+
+      .searchbuttons {
+        display: flex;
+        padding: 30px;
+        gap: 20px;
+      }
+
+      .searchbuttons button {
+        outline: none;
+        border: none;
+        border-radius: 3px;
+        padding: 7px 15px;
+        font-size: 16px;
+        background-color: rgb(64, 62, 69);
+        color: aliceblue;
+      }
+
+      .searchbuttons button:hover {
+        border: rgba(240, 248, 255, 0.419) 0.5px solid;
+      }
+
+      footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: rgb(32, 30, 30);
+      }
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 25px;
+        position: relative;
+      }
+
+      .footer-content > ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        gap: 25px;
+      }
+
+      .footer-content > ul > li,
+      .footer-content p {
+        padding: 20px 0;
+      }
+
+      .middle {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+      }
+
+      .dropup {
+        position: absolute;
+        bottom: 60px;
+        right: 0px;
+        width: 160px;
+        background-color: rgb(45, 44, 48);
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.274);
+      }
+
+      .dropup ul {
+        list-style: none;
+        padding: 12px 0;
+      }
+
+      .dropup ul li {
+        display: flex;
+        width: 100%;
+      }
+
+      .dropup ul li a,
+      .dropup ul li button {
+        width: 100%;
+        padding: 5px 18px;
+      }
+
+      .dropup ul li a:hover,
+      .dropup ul li button:hover {
+        background-color: rgb(65, 64, 68);
+        text-decoration: none;
+      }
+
+      .dropup ul li button {
+        outline: none;
+        border: none;
+        background-color: transparent;
+        color: aliceblue;
+        font-size: 14px;
+        text-align: left;
+      }
+
+      .dropup {
+        display: none;
+      }
+
+      .setting:hover {
+        position: relative;
+        cursor: pointer;
+      }
+      .setting:hover .dropup {
+        display: block;
+      }
+    </style>
+    <script></script>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>
+          <a
+            href="https://about.google/?fg=1&utm_source=google-US&utm_medium=referral&utm_campaign=hp-header"
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://store.google.com/US/?utm_source=hp_header&utm_medium=google_ooo&utm_campaign=GS100042&hl=en-US&pli=1"
+            >Store
+          </a>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="https://mail.google.com/mail/u/0/?ogbl#inbox"> Gmail</a>
+        </li>
+        <li>
+          <a href="https://www.google.com/imghp?hl=en&authuser=0&ogbl"
+            >Images</a
+          >
+        </li>
+        <li style="display: flex">
+          <span class="material-symbols-outlined"> apps </span>
+        </li>
+        <li>
+          <div class="pfp-container">
+            <img src="images/jessika-arraes-c7SGN_jfJ0I-unsplash.jpg" alt="profile" />
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="main">
+      <img src="images/google.png" />
+      <div class="searchbar-container">
+        <div class="left-icon">
+          <span class="material-symbols-outlined"> search </span>
+        </div>
+        <input class="searchbar" />
+        <div class="right-icon">
+          <span class="material-symbols-outlined"> mic </span>
+          <span class="material-symbols-outlined"> photo_camera </span>
+        </div>
+      </div>
+      <div class="searchbuttons">
+        <button
+          onClick="window.open('https://www.nationalgeographic.com/animals/mammals/facts/domestic-cat')"
+          target="_blank"
+        >
+          My Search
+        </button>
+        <button
+          onClick="window.open('https://en.wikipedia.org/wiki/Poop_emoji')"
+          target="_blank"
+        >
+          I'm Feeling Poopy
+        </button>
+      </div>
+    </div>
+    <footer>
+      <div class="footer-content">
+        <ul>
+          <li>
+            <a href="https://ads.google.com/intl/en_us/home">Advertising</a>
+          </li>
+          <li><a href="https://smallbusiness.withgoogle.com">Business</a></li>
+          <li>
+            <a href="https://www.google.com/search/howsearchworks/?fg=1"
+              >How My Search works
+            </a>
+          </li>
+        </ul>
+        <p class="middle">
+          <a href="https://sustainability.google/carbon-free"
+            >Carbon neutral since 2023</a
+          >
+        </p>
+        <ul class="right">
+          <li>
+            <a href="https://policies.google.com/privacy?hl=en&fg=1Privacy"
+              >Privacy</a
+            >
+          </li>
+          <li>
+            <a href="https://policies.google.com/terms?hl=en&fg=1">Terms</a>
+          </li>
+          <li class="setting">
+            <div class="dropup">
+              <ul>
+                <li>
+                  <a href="https://www.google.com/preferences?hl=en&fg=1"
+                    >Search settings</a
+                  >
+                </li>
+                <li>
+                  <a href="https://www.google.com/advanced_search?hl=en&fg=1"
+                    >Advanced search</a
+                  >
+                </li>
+                <li>
+                  <a href="https://myaccount.google.com">Your data in Search</a>
+                </li>
+                <li>
+                  <a href="https://www.google.com/history/optout?hl=en&fg=1"
+                    >Search history</a
+                  >
+                </li>
+                <li><a href="https://support.google.com">Search help</a></li>
+                <li><button>Send feedback</button></li>
+              </ul>
+            </div>
+            <span>Settings</span>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
