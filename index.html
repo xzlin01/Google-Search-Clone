@@ -122,7 +122,7 @@
       }
 
       .searchbar:focus,
-      .searchbar:hover{
+      .searchbar:hover {
         border: none;
         outline: none;
         background-color: rgb(71, 68, 78);
@@ -236,7 +236,14 @@
         display: block;
       }
     </style>
-    <script></script>
+    <script>
+      function search() {
+        var inputValue = document.getElementById("main-searchbar").value;
+        if (inputValue !== "") {
+          location.href = `https://www.google.com/search?q=${inputValue}`;
+        }
+      }
+    </script>
   </head>
   <body>
     <nav>
@@ -269,7 +276,10 @@
         </li>
         <li>
           <div class="pfp-container">
-            <img src="images/jessika-arraes-c7SGN_jfJ0I-unsplash.jpg" alt="profile" />
+            <img
+              src="images/jessika-arraes-c7SGN_jfJ0I-unsplash.jpg"
+              alt="profile"
+            />
           </div>
         </li>
       </ul>
@@ -280,19 +290,14 @@
         <div class="left-icon">
           <span class="material-symbols-outlined"> search </span>
         </div>
-        <input class="searchbar" />
+        <input class="searchbar" id="main-searchbar" />
         <div class="right-icon">
           <span class="material-symbols-outlined"> mic </span>
           <span class="material-symbols-outlined"> photo_camera </span>
         </div>
       </div>
       <div class="searchbuttons">
-        <button
-          onClick="window.open('https://www.nationalgeographic.com/animals/mammals/facts/domestic-cat')"
-          target="_blank"
-        >
-          My Search
-        </button>
+        <button onClick="search()" id="searchbutton">My Search</button>
         <button
           onClick="window.open('https://en.wikipedia.org/wiki/Poop_emoji')"
           target="_blank"
@@ -358,5 +363,16 @@
         </ul>
       </div>
     </footer>
+
+    <script>
+      var input = document.getElementById("main-searchbar");
+      input.addEventListener("keypress", function (event) {
+        console.log("Hello");
+        if (event.key === "Enter") {
+          event.preventDefault();
+          document.getElementById("searchbutton").click();
+        }
+      });
+    </script>
   </body>
 </html>
